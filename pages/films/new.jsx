@@ -5,6 +5,7 @@ import * as yup from "yup"
 import Button from "../../src/components/Button"
 import Input from "../../src/components/Input"
 import Page from "../../src/components/Page"
+import InputFormField from "../../src/components/InputFormField"
 
 const validationSchema = yup.object().shape({
   name: yup.string().required().min(1).max(120),
@@ -16,7 +17,7 @@ const FilmsNewPage = () => {
   const initialValues = {
     name: "",
     distributor: "",
-    running_time: 220,
+    running_time: "",
     budget: "",
   }
   const handleFormSubmit = useCallback((values) => {
@@ -32,28 +33,25 @@ const FilmsNewPage = () => {
       >
         {({ handleSubmit }) => (
           <form onSubmit={handleSubmit}>
-            <Field name="name">
-              {({ field, meta }) => (
-                <p>
-                  <Input {...field} placeholder="Name" />
-                  <span className="block text-red-600 font-bold">
-                    {meta.touched && meta.error ? meta.error : null}
-                  </span>
-                </p>
-              )}
-            </Field>
-            <p>
-              <Field name="distributor">
-                {({ field }) => <Input {...field} placeholder="Distributor" />}
-              </Field>
-            </p>
-            <p>
-              <Field name="running_time">
-                {({ field }) => (
-                  <Input {...field} placeholder="Running time" type="number" />
-                )}
-              </Field>
-            </p>
+            <InputFormField
+              name="name"
+              placeholder="e.g Men in Black"
+              label="Film's name"
+              className="block mb-3"
+            />
+            <InputFormField
+              name="distributor"
+              placeholder="e.g Disney"
+              label="Distributor's name"
+              className="block mb-3"
+            />
+            <InputFormField
+              name="running_time"
+              placeholder="e.g 120"
+              label="Running time"
+              className="block mb-3"
+              type="number"
+            />
             <p>
               <Field name="budget">
                 {({ field }) => (
