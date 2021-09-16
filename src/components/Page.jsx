@@ -1,3 +1,4 @@
+import classNames from "classnames"
 import Link from "next/link"
 
 const Page = (props) => {
@@ -28,8 +29,8 @@ const Page = (props) => {
         </nav>
       </header>
       <hr />
-      <h2 className="text-2xl">{title}</h2>
-      <div className={className}>{children}</div>
+      <h2 className="p-5 text-2xl">{title}</h2>
+      <div className={classNames("container p-5", className)}>{children}</div>
     </div>
   )
 }
