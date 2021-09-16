@@ -21,6 +21,9 @@ const Page = (props) => {
             <li>
               <Link href="/cinemas">Cinema</Link>
             </li>
+            <li>
+              <Link href="/cinemas/new">Add new cinema</Link>
+            </li>
           </ul>
         </nav>
       </header>
