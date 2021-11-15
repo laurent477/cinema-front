@@ -2,7 +2,7 @@ import { Field, Formik } from "formik"
 import { useCallback } from "react"
 import * as yup from "yup"
 
-import Page from "../src/components/Page"
+import Nav from "../src/components/nav"
 import Button from "../src/components/Button"
 
 const validationSchema = yup.object().shape({
@@ -19,7 +19,7 @@ const SignUpPage = () => {
   }, [])
 
   return (
-    <Page title="Sign Up">
+    <Nav title="Sign Up">
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -40,7 +40,7 @@ const SignUpPage = () => {
           </form>
         )}
       </Formik>
-    </Page>
+    </Nav>
   )
 }
 

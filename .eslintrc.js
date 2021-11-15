@@ -5,6 +5,8 @@ module.exports = {
     "prettier",
     "next",
     "plugin:react/recommended",
+    "next/babel"
+
   ],
   plugins: ["react", "react-hooks"],
   env: {

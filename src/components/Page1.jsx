@@ -1,5 +1,6 @@
 import classNames from "classnames"
 import Link from "next/link"
+import Bodys from "../bodys"
 
 const Page = (props) => {
   const { title, children, className } = props
@@ -10,7 +11,7 @@ const Page = (props) => {
         <h1 className="text-4xl">Cinema Cinema</h1>
         <nav>
           <ul className="flex justify-around">
-            <li>
+            <li  class="text-blue-500 hover:text-red-800">
               <Link href="/">Home</Link>
             </li>
             <li>
@@ -28,6 +29,9 @@ const Page = (props) => {
           </ul>
         </nav>
       </header>
+      <Bodys>
+        hello
+      </Bodys>
       <hr />
       <h2 className="p-5 text-2xl">{title}</h2>
       <div className={classNames("container p-5", className)}>{children}</div>

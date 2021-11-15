@@ -4,10 +4,11 @@ import * as yup from "yup"
 
 import Button from "../../src/components/Button"
 import Input from "../../src/components/Input"
-import Page from "../../src/components/Page"
+import Nav from "../../src/components/nav"
 import FormField from "../../src/components/FormField"
 import LanguageSelector from "../../src/components/LanguageSelector"
 
+// =========== definir les types des deifferent variables=============
 const validationSchema = yup.object().shape({
   name: yup.string().required().min(1).max(120),
   distributor: yup.string().required().min(1).max(120),
@@ -16,6 +17,8 @@ const validationSchema = yup.object().shape({
   language_id: yup.number().integer().min(1).required(),
   original_language_id: yup.number().integer().min(1).required(),
 })
+//============initiaaliser les valeur des variable=================
+
 const FilmsNewPage = () => {
   const initialValues = {
     name: "",
@@ -25,12 +28,14 @@ const FilmsNewPage = () => {
     language_id: "",
     original_language_id: "",
   }
+  // ======afficher les valeur appelle a la fonction handeformsubmit============
   const handleFormSubmit = useCallback((values) => {
     console.log(values)
   }, [])
 
+  //a
   return (
-    <Page title="Add a new film">
+    <Nav title="Add a new film">
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -90,7 +95,7 @@ const FilmsNewPage = () => {
           </form>
         )}
       </Formik>
-    </Page>
+    </Nav>
   )
 }
 

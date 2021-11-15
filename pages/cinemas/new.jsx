@@ -5,6 +5,7 @@ import * as yup from "yup"
 import Button from "../../src/components/Button"
 import FormField from "../../src/components/FormField"
 import Input from "../../src/components/Input"
+import Nav from "../../src/components/nav"
 import Page from "../../src/components/Page"
 
 const validationSchema = yup.object().shape({
@@ -23,7 +24,7 @@ const CinemasNewPage = () => {
   }, [])
 
   return (
-    <Page title="Add a new cinema">
+    <Nav title="Add a new cinema">
       <Formik
         onSubmit={handleFormSubmit}
         initialValues={initialValues}
@@ -59,12 +60,39 @@ const CinemasNewPage = () => {
               />
             </p>
             <p>
+              <FormField
+                as={Input}
+                name="number_seats"
+                placeholder="e.g 100"
+                min="1"
+                type="number"
+              />
+            </p>
+            <p>
+              <FormField
+                as={Input}
+                name="number_seats"
+                placeholder="e.g 100"
+                min="1"
+                type="number"
+              />
+            </p>
+            <p>
+              <FormField
+                as={Input}
+                name="number_seats"
+                placeholder="e.g 100"
+                min="1"
+                type="number"
+              />
+            </p>
+            <p>
               <Button type="submit">Submit</Button>
             </p>
           </form>
         )}
       </Formik>
-    </Page>
+    </Nav>
   )
 }
 

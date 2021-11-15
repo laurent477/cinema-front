@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react"
 import axios from "axios"
 
-import Page from "../src/components/Page"
+import Nav from "../src/components/nav"
 
 const CinemasPage = () => {
   const [cinemas, setCinemas] = useState([])
@@ -22,9 +22,9 @@ const CinemasPage = () => {
       setCinemas(data)
     })()
   }, [])
-
+// 
   return (
-    <Page title="Films">
+    <Nav title="Films">
       <ul className="p-5">
         {cinemas.map((cinema) => (
           <li className="mb-4" key={cinema.cinema_id}>
@@ -50,7 +50,7 @@ const CinemasPage = () => {
           </li>
         ))}
       </ul>
-    </Page>
+    </Nav>
   )
 }
 
